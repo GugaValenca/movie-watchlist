@@ -2,44 +2,124 @@
   text-align: center;
   margin-bottom: 40px;
   padding: 40px 0;
+  position: relative;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffd700,
+    #dc143c,
+    #ffd700,
+    transparent
+  );
+  border-radius: 2px;
+  animation: headerGlow 3s ease-in-out infinite;
+}
+
+@keyframes headerGlow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .header__title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  color: #2c3e50;
-  margin: 0 0 10px 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ffd700, #ffed4e, #dc143c, #ffd700);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 20px 0 15px 0;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+  animation: gradientShift 4s ease infinite;
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header__title::after {
+  content: "🎬✨🎭";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+    opacity: 1;
+  }
 }
 
 .header__subtitle {
-  font-size: 1.2rem;
-  color: #7f8c8d;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 215, 0, 0.8)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (max-width: 768px) {
   .header {
-    padding: 20px 0;
+    padding: 30px 0;
     margin-bottom: 30px;
   }
 
   .header__title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .header__subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 0 20px;
   }
 }
 
 @media (max-width: 480px) {
   .header__title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .header__subtitle {

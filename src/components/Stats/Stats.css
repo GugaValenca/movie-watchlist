@@ -11,43 +11,92 @@
 }
 
 .stats__card {
-  background-color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.9),
+    rgba(22, 33, 62, 0.9)
+  );
+  backdrop-filter: blur(10px);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e8ecf0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 215, 0, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
 }
 
 .stats__card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+.stats__card:hover::before {
+  left: 100%;
 }
 
 .stats__number {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  color: #3498db;
+  color: #ffd700;
   display: block;
   line-height: 1;
   margin-bottom: 10px;
+  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+  position: relative;
 }
 
 .stats__number--watched {
-  color: #27ae60;
+  color: #32cd32;
+  text-shadow: 0 2px 8px rgba(50, 205, 50, 0.3);
 }
 
 .stats__number--unwatched {
-  color: #e74c3c;
+  color: #dc143c;
+  text-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
 }
 
 .stats__label {
   font-size: 1rem;
-  color: #7f8c8d;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Glowing animation for numbers */
+.stats__number::after {
+  content: attr(data-value);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: currentColor;
+  filter: blur(4px);
+  opacity: 0.6;
+  z-index: -1;
 }
 
 @media (max-width: 768px) {
@@ -61,11 +110,11 @@
   }
 
   .stats__card {
-    padding: 20px;
+    padding: 25px 20px;
   }
 
   .stats__number {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .stats__label {
@@ -77,5 +126,13 @@
   .stats__grid {
     grid-template-columns: 1fr;
     max-width: 300px;
+  }
+
+  .stats__card {
+    padding: 20px;
+  }
+
+  .stats__number {
+    font-size: 2rem;
   }
 }

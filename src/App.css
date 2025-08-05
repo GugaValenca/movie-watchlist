@@ -3,8 +3,16 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 25%,
+    #0f3460 50%,
+    #533483 75%,
+    #7209b7 100%
+  );
   background-attachment: fixed;
   min-height: 100vh;
   color: #f8f9fa;
@@ -14,15 +22,22 @@
 
 /* Cinema atmosphere overlay */
 .app::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(220, 20, 60, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 215, 0, 0.1) 0%,
+      transparent 50%
+    ),
     linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
   pointer-events: none;
   z-index: -1;
@@ -30,34 +45,42 @@
 
 /* Spotlight effects */
 .app::after {
-  content: '';
+  content: "";
   position: fixed;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: 
-    radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.05) 0%, transparent 25%),
-    radial-gradient(circle at 75% 75%, rgba(220, 20, 60, 0.05) 0%, transparent 25%);
+  background: radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 215, 0, 0.05) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(220, 20, 60, 0.05) 0%,
+      transparent 25%
+    );
   animation: cinemaLights 20s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
 }
 
 @keyframes cinemaLights {
-  0%, 100% { 
+  0%,
+  100% {
     transform: rotate(0deg) scale(1);
     opacity: 0.3;
   }
-  25% { 
+  25% {
     transform: rotate(90deg) scale(1.1);
     opacity: 0.5;
   }
-  50% { 
+  50% {
     transform: rotate(180deg) scale(0.9);
     opacity: 0.4;
   }
-  75% { 
+  75% {
     transform: rotate(270deg) scale(1.1);
     opacity: 0.6;
   }
@@ -151,8 +174,6 @@ html {
 
 /* Cinema glow effect utility */
 .cinema-glow {
-  box-shadow: 
-    0 0 20px rgba(255, 215, 0, 0.2),
-    0 0 40px rgba(220, 20, 60, 0.1),
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2), 0 0 40px rgba(220, 20, 60, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
