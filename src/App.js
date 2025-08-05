@@ -20,16 +20,32 @@ const App = () => {
   } = useMovies();
 
   const [currentFilter, setCurrentFilter] = useState("all");
+  const [genreFilter, setGenreFilter] = useState("");
 
   const getFilteredMovies = () => {
+    let filteredMovies = movies;
+
+    // Filter by watched status
     switch (currentFilter) {
       case "watched":
-        return movies.filter((movie) => movie.isWatched);
+        filteredMovies = filteredMovies.filter((movie) => movie.isWatched);
+        break;
       case "unwatched":
-        return movies.filter((movie) => !movie.isWatched);
+        filteredMovies = filteredMovies.filter((movie) => !movie.isWatched);
+        break;
       default:
-        return movies;
+        // 'all' - no filtering needed
+        break;
     }
+
+    // Filter by genre if selected
+    if (genreFilter) {
+      filteredMovies = filteredMovies.filter(
+        (movie) => movie.genre === genreFilter
+      );
+    }
+
+    return filteredMovies;
   };
 
   return (
@@ -49,6 +65,8 @@ const App = () => {
           watched: watchedMovies,
           unwatched: unwatchedMovies,
         }}
+        movies={movies}
+        onGenreFilter={setGenreFilter}
       />
       <MovieList
         movies={getFilteredMovies()}

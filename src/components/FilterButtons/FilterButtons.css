@@ -1,8 +1,12 @@
 .filter-buttons {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
-.filter-buttons__container {
+.filter-buttons__main {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -31,6 +35,150 @@
 }
 
 .filter-buttons__btn:active {
+  transform: translateY(0);
+}
+
+.filter-buttons__btn--active {
+  background-color: #3498db;
+  border-color: #3498db;
+  color: white;
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+.filter-buttons__btn--active:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+
+/* Genre Filter Styles */
+.filter-buttons__genre-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-buttons__genre-toggle {
+  padding: 10px 20px;
+  border: 2px solid #e9ecef;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6c757d;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  outline: none;
+}
+
+.filter-buttons__genre-toggle:hover {
+  background-color: #e9ecef;
+  border-color: #3498db;
+}
+
+.filter-buttons__genre-toggle--active {
+  background-color: #3498db;
+  border-color: #3498db;
+  color: white;
+}
+
+.filter-buttons__genre-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.filter-buttons__genre-select {
+  padding: 8px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+  font-family: inherit;
+  min-width: 150px;
+}
+
+.filter-buttons__genre-select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.filter-buttons__clear-genre {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+
+.filter-buttons__clear-genre:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .filter-buttons {
+    margin-bottom: 25px;
+    gap: 12px;
+  }
+
+  .filter-buttons__main {
+    gap: 10px;
+  }
+
+  .filter-buttons__btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .filter-buttons__genre-dropdown {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .filter-buttons__genre-select {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-buttons__main {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .filter-buttons__btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 20px;
+  }
+
+  .filter-buttons__genre-toggle {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+uttons__btn:active {
   transform: translateY(0);
 }
 

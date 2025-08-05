@@ -1,4 +1,5 @@
 import React from "react";
+import { getGenreWithEmoji } from "../../utils/genres";
 import "./MovieCard.css";
 
 const MovieCard = ({ movie, onToggleWatched, onDeleteMovie }) => {
@@ -29,7 +30,9 @@ const MovieCard = ({ movie, onToggleWatched, onDeleteMovie }) => {
       </div>
 
       <div className="movie-card__meta">
-        <span className="movie-card__genre">{movie.genre}</span>
+        <span className="movie-card__genre">
+          {getGenreWithEmoji(movie.genre)}
+        </span>
         <span className="movie-card__date">Added {movie.dateAdded}</span>
       </div>
 
