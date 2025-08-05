@@ -1,0 +1,127 @@
+.movie-form {
+  margin-bottom: 40px;
+}
+
+.movie-form__card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e8ecf0;
+}
+
+.movie-form__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.movie-form__form {
+  width: 100%;
+}
+
+.movie-form__inputs {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 15px;
+  align-items: end;
+}
+
+.movie-form__input {
+  padding: 15px 20px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fafbfc;
+  font-family: inherit;
+}
+
+.movie-form__input:focus {
+  border-color: #3498db;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.movie-form__input--active {
+  border-color: #3498db;
+  background-color: white;
+}
+
+.movie-form__input::placeholder {
+  color: #95a5a6;
+}
+
+.movie-form__button {
+  padding: 15px 30px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.movie-form__button:hover:not(:disabled) {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.movie-form__button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.movie-form__button--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #bdc3c7;
+  box-shadow: none;
+}
+
+.movie-form__button--disabled:hover {
+  transform: none;
+  background-color: #bdc3c7;
+}
+
+@media (max-width: 768px) {
+  .movie-form__card {
+    padding: 30px 20px;
+  }
+
+  .movie-form__inputs {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .movie-form__input {
+    padding: 12px 16px;
+  }
+
+  .movie-form__button {
+    padding: 12px 24px;
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-form {
+    margin-bottom: 30px;
+  }
+
+  .movie-form__card {
+    padding: 25px 15px;
+  }
+
+  .movie-form__title {
+    font-size: 1.3rem;
+  }
+}
