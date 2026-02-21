@@ -70,7 +70,7 @@ const FilterButtons = ({ currentFilter, onFilterChange, counts, movies, onGenreF
             onClick={() => setShowGenreFilter(!showGenreFilter)}
             className={`filter-buttons__genre-toggle ${showGenreFilter ? 'filter-buttons__genre-toggle--active' : ''}`}
           >
-            🎭 Filter by Genre {selectedGenre && `(${selectedGenre})`}
+            Filter by Genre {selectedGenre && `(${selectedGenre})`}
           </button>
 
           {showGenreFilter && (
@@ -87,14 +87,14 @@ const FilterButtons = ({ currentFilter, onFilterChange, counts, movies, onGenreF
                   </option>
                 ))}
               </select>
-              
+
               {selectedGenre && (
                 <button
                   onClick={clearGenreFilter}
                   className="filter-buttons__clear-genre"
                   title="Clear genre filter"
                 >
-                  ✕
+                  x
                 </button>
               )}
             </div>
