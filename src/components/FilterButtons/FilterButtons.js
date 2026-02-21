@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { MOVIE_GENRES } from '../../utils/genres';
 import './FilterButtons.css';
 
 const FilterButtons = ({ currentFilter, onFilterChange, counts, movies, onGenreFilter }) => {
