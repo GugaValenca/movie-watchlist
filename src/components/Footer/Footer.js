@@ -61,10 +61,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__content">
         <p className="footer__text">
-          Built with React ⚛️ • Movie Watchlist App • {currentYear}
+          Built with React | Movie Watchlist App | {currentYear}
         </p>
         <p className="footer__credit">
-          Created by <strong>Gustavo Valença</strong>
+          Created by <strong>Gustavo Valenca</strong>
         </p>
         <div className="footer__social">
           <p className="footer__social-title">Connect with me:</p>

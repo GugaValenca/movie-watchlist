@@ -87,7 +87,7 @@ const MovieForm = ({ onAddMovie }) => {
                   {genreOption.label}
                 </option>
               ))}
-              <option value="custom">✏️ Custom Genre</option>
+              <option value="custom">Custom Genre</option>
             </select>
           </div>
 
